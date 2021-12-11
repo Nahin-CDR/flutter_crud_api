@@ -21,15 +21,15 @@ class _HomePageState extends State<HomePage>{
 
     Future apicall()async{     //https://reqres.in/api/users/2 = single user
     http.Response response; //https://reqres.in/api/users?page=2 = user list
-    response = await http.get(Uri.parse("https://reqres.in/api/users/2") ); /** API URL get request**/
+    response = await http.get(Uri.parse("https://reqres.in/api/users?page=2") ); /** API URL get request**/
     if(response.statusCode == 200)
     {
         setState((){
         //stringResponse = response.body;
         mapResponse = json.decode(response.body);
-        dataResponse = mapResponse!['data'];
-        supportResponse = mapResponse!['support'];
-        //listResponse = mapResponse!['data'];
+        //dataResponse = mapResponse!['data'];
+       // supportResponse = mapResponse!['support'];
+        listResponse = mapResponse!['data'];
       });
     }
   }
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage>{
 
   @override
   Widget build(BuildContext context) {
-    return SingleItem();//ListItems();
+    return ListItems();//SingleItem();
   }
 }
 
