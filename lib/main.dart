@@ -3,9 +3,6 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'get_request_page.dart';
 
-
-
-
 void main() {
   runApp(MyApp());
 }
